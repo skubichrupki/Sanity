@@ -8,3 +8,9 @@ then 16 pixels fit into one square
 Sprite Mode -> Multiple
 Sprite Editor
 Slice -> grid by cell size -> 16x16
+#
+Hierarchy -> 2D Objects -> Tilemap -> Rectangular
+Window -> 2D -> Tile Palette
+#
+Put terrain bitmap into Tile Palette
+Create a folder and save generated Tilemap into Assets
