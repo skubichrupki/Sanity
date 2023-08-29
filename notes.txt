@@ -1,0 +1,34 @@
+### importing sprite ###
+when importing sprite, change pixels per unit from 100 to 16
+(for pixel art 16x16 terrain)
+(1 unit is 1 square in scene)
+then 16 pixels fit into one square
+
+### 16 px terrain ###
+Sprite Mode -> Multiple
+Sprite Editor
+Slice -> grid by cell size -> 16x16
+#
+Hierarchy -> 2D Objects -> Tilemap -> Rectangular
+Window -> 2D -> Tile Palette
+#
+Put terrain bitmap into Tile Palette
+Create a folder and save generated Tilemap into Assets
+#
+Grid
+Background -> Inspector -> Tilemap Renderer -> Sorting Layer
+Sorting layers (The layer above is behind)
+#
+Component -> TileMap Collider 2D
+Component -> Composite Collider 2D (mergers tilemap colliders into 1)
+Tilemap -> Used by Composite [1]
+RigidBody 2D -> Static
+
+### player ###
+Hierarchy -> 2D objects -> sprites -> square
+# add physics Component
+Inspector -> add component -> rigidbody2D
+Component -> boxCollider2D
+
+### scripts ###
+CamelCase
