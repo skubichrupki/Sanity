@@ -1,0 +1,10 @@
+### importing sprite ###
+when importing sprite, change pixels per unit from 100 to 16
+(for pixel art 16x16 terrain)
+(1 unit is 1 square in scene)
+then 16 pixels fit into one square
+
+### 16 px terrain ###
+Sprite Mode -> Multiple
+Sprite Editor
+Slice -> grid by cell size -> 16x16
