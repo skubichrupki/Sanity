@@ -4,16 +4,43 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    // stuff we want to happen when the game starts - kind of like on ready in JS
-    void Start()
+    // component - RigidBody2D
+    private Rigidbody2D rb;
+
+    private float dirYUp = 12f;
+    private float dirXMultiplier = 8f;
+
+    // Start is called BEFORE the first frame update
+    private void Start()
     {
-        Debug.Log("Hi mom"); // console.log(''); -> Debug.Log("");
+        Debug.Log("Hi mom");
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        // LEFT RIGHT MOVEMENT STARTS HERE --
+        float dirX = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(dirX * dirXMultiplier, rb.velocity.y);
+        // LEFT RIGHT MOVEMENT ENDS HERE --
+
+
+        // JUMP STARTS HERE --
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            Debug.Log("W was pressed");
+            // Vector2(x,y)
+            rb.velocity = new Vector2(rb.velocity.x, dirYUp);
+            // Edit -> Project Settings -> Input Manager instead of hardcoding keys
+
+            // Input.GetKeyDown(KeyCode.W))
+            // Input.GetButtonDown("Up")
+        }
+        // JUMP ENDS HERE --
+
+        // if rb.velocity y > 0 then you CANT press W anymore and CAN press S
+
+
+
     }
 }
