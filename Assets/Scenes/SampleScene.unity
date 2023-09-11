@@ -3358,6 +3358,7 @@ GameObject:
   - component: {fileID: 1506488254}
   - component: {fileID: 1506488255}
   - component: {fileID: 1506488256}
+  - component: {fileID: 1506488257}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3406,7 +3407,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e15cacb57fa9da54d819bcb8d4c3fe47, type: 3}
+  m_Sprite: {fileID: -6367560908665664636, guid: 40de9a8703e2e5a47882b0b86451c741, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3491,18 +3492,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.022441268, y: -0.54472166}
+  m_Offset: {x: 0.017626643, y: -0.22548687}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 4}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 4, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0932026, y: 2.8938847}
+  m_Size: {x: 1.3221619, y: 1.4311621}
   m_EdgeRadius: 0
 --- !u!114 &1506488256
 MonoBehaviour:
@@ -3516,6 +3517,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57af94bebae4e884faba3da77612090a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1506488257
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506488251}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fa0918716e32b5745a417473d479a9ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2015865017
 GameObject:
   m_ObjectHideFlags: 0

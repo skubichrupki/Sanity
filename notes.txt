@@ -32,3 +32,19 @@ Component -> boxCollider2D
 
 ### scripts ###
 CamelCase
+
+
+### keys binding ###
+Edit -> Project Settings -> Input Manager instead of hardcoding keys
+then use // Input.GetButtonDown("Up") instead of Input.GetKeyDown(KeyCode.W)
+
+New Animation
+Create new -> Animation
+Drag onto objects
+Window -> Animation -> Animation
+
+In Animator:
+Rigt click -> Make transition
+Add Parameters
+Has Exit time: 0
+Transition Duration: 0

@@ -4,43 +4,69 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // component - RigidBody2D
+    // initiate components
     private Rigidbody2D rb;
+    private Animator anim;
 
+    // initiate variables
     private float dirYUp = 12f;
     private float dirXMultiplier = 8f;
+    private float dirX = 0f;
 
     // Start is called BEFORE the first frame update
     private void Start()
     {
         Debug.Log("Hi mom");
+        // get components
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        // LEFT RIGHT MOVEMENT STARTS HERE --
-        float dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX * dirXMultiplier, rb.velocity.y);
-        // LEFT RIGHT MOVEMENT ENDS HERE --
+        MovementX();
+        MovementXAnim();
+        Jump();
+    }
 
+    private void Jump() 
+    {
 
-        // JUMP STARTS HERE --
         if (Input.GetKeyDown(KeyCode.W))
+                {
+                    Debug.Log("Key: W");
+                    // Vector2(x,y)
+                    rb.velocity = new Vector2(rb.velocity.x, dirYUp);
+
+                    // Input.GetKeyDown(KeyCode.W))
+                    // Input.GetButtonDown("Up")
+                }
+    }
+
+    private void MovementX() 
+    {
+        // get -1 or 1 from Input
+        dirX = Input.GetAxisRaw("Horizontal");
+        // x = -1 or 1 * multiplier 
+        rb.velocity = new Vector2(dirX * dirXMultiplier, rb.velocity.y);
+    }
+
+
+    private void MovementXAnim() {
+        // run right
+        if (dirX > 0f)
         {
-            Debug.Log("W was pressed");
-            // Vector2(x,y)
-            rb.velocity = new Vector2(rb.velocity.x, dirYUp);
-            // Edit -> Project Settings -> Input Manager instead of hardcoding keys
-
-            // Input.GetKeyDown(KeyCode.W))
-            // Input.GetButtonDown("Up")
+            anim.SetBool("IsRunning", true);
         }
-        // JUMP ENDS HERE --
-
-        // if rb.velocity y > 0 then you CANT press W anymore and CAN press S
-
-
-
+        // run left
+        else if (dirX < 0f) 
+        {
+            anim.SetBool("IsRunning", true);
+        }
+        // not running
+        else 
+        {
+            anim.SetBool("IsRunning", false);
+        }
     }
 }
