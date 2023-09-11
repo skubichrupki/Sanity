@@ -48,3 +48,9 @@ Rigt click -> Make transition
 Add Parameters
 Has Exit time: 0
 Transition Duration: 0
+
+### VARIABLES ###
+make variables visible in Unity:
+[SerializeField] var x = 0;
+
+! WHEN CHANGING A NAME OF VARIABLE US CTRL + R - variable name will change everywhere

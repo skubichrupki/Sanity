@@ -7,11 +7,12 @@ public class PlayerMovement : MonoBehaviour
     // initiate components
     private Rigidbody2D rb;
     private Animator anim;
+    private SpriteRenderer spriteRend;
 
     // initiate variables
-    private float dirYUp = 12f;
-    private float dirXMultiplier = 8f;
-    private float dirX = 0f;
+    [SerializeField] private float dirYUpSpeed = 12f;
+    [SerializeField] private float dirXMultiplier = 8f;
+    [SerializeField] private float dirXSpeed = 0f;
 
     // Start is called BEFORE the first frame update
     private void Start()
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
         // get components
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        spriteRend = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -33,35 +35,36 @@ public class PlayerMovement : MonoBehaviour
     {
 
         if (Input.GetKeyDown(KeyCode.W))
-                {
-                    Debug.Log("Key: W");
-                    // Vector2(x,y)
-                    rb.velocity = new Vector2(rb.velocity.x, dirYUp);
+        {
+            Debug.Log("Key: W");
+            // Vector2(x,y)
+            rb.velocity = new Vector2(rb.velocity.x, dirYUpSpeed);
 
-                    // Input.GetKeyDown(KeyCode.W))
-                    // Input.GetButtonDown("Up")
-                }
+            // Input.GetKeyDown(KeyCode.W))
+            // Input.GetButtonDown("Up")
+        }
     }
 
     private void MovementX() 
     {
         // get -1 or 1 from Input
-        dirX = Input.GetAxisRaw("Horizontal");
+        dirXSpeed = Input.GetAxisRaw("Horizontal");
         // x = -1 or 1 * multiplier 
-        rb.velocity = new Vector2(dirX * dirXMultiplier, rb.velocity.y);
+        rb.velocity = new Vector2(dirXSpeed * dirXMultiplier, rb.velocity.y);
     }
-
 
     private void MovementXAnim() {
         // run right
-        if (dirX > 0f)
+        if (dirXSpeed > 0f)
         {
             anim.SetBool("IsRunning", true);
+            spriteRend.flipX = false;
         }
         // run left
-        else if (dirX < 0f) 
+        else if (dirXSpeed < 0f) 
         {
             anim.SetBool("IsRunning", true);
+            spriteRend.flipX = true;
         }
         // not running
         else 
