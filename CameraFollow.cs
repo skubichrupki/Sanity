@@ -7,12 +7,13 @@ public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private float cameraFollowSpeed = 4f;
-    [SerializeField] private float offsetY = 4f;
+    [SerializeField] private float offsetY = 0f;
 
     // Update is called once per frame
     private void Update()
     {
         CameraUpdate();
+        //test xd
     }
 
 
@@ -23,7 +24,7 @@ public class CameraFollow : MonoBehaviour
 
             transform.position = Vector3.Slerp(transform.position, newPlayerPos, cameraFollowSpeed * Time.deltaTime);
     }
-
+    // new pc test
 }
 
     
