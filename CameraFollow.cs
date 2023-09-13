@@ -13,7 +13,6 @@ public class CameraFollow : MonoBehaviour
     private void Update()
     {
         CameraUpdate();
-        //test xd
     }
 
 
@@ -24,7 +23,6 @@ public class CameraFollow : MonoBehaviour
 
             transform.position = Vector3.Slerp(transform.position, newPlayerPos, cameraFollowSpeed * Time.deltaTime);
     }
-    // new pc test
 }
 
     
