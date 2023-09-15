@@ -55,3 +55,8 @@ make variables visible in Unity:
 
 ! WHEN CHANGING A NAME OF VARIABLE US CTRL + R - variable name will change everywhere
 upd
+
+
+TO MAKE CHARACTER not stick to the sides of tilemap
+Add component platform effector 2D -> Uncheck Use One Way
+Composite Collider -> check use by effector
