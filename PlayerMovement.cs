@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float slideDuration = 0.3f;
 
     [SerializeField] private LayerMask groundJump;
+    [SerializeField] private TMP_Text playerState;
+
 
     private bool isSliding = false;
     private bool isSlidingRight = false;
@@ -42,7 +46,9 @@ public class PlayerMovement : MonoBehaviour
         rigidbodyy = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        boxCollider = GetComponent<BoxCollider2D>();    
+        boxCollider = GetComponent<BoxCollider2D>();
+        playerState.SetText("Idle");
+
     }
 
     // ----------------------------------------------------------------------------------------
@@ -134,6 +140,7 @@ public class PlayerMovement : MonoBehaviour
 
         // local state variable of MovementState enum;
         MovementState state;
+        string stateString;
 
         // CHECK FOR RUNNING ANIMATION
         // run right
@@ -177,6 +184,12 @@ public class PlayerMovement : MonoBehaviour
         // cast state into int with (int)x;
         // after all checks set value of state variable of type MovementState to corresponding int value of enum values
         animator.SetInteger("state", (int)state);
+
+        // convert the text to string 
+        stateString = state.ToString();
+
+        //set the text of UI showing player state
+        playerState.SetText(stateString);
     }
 
 

@@ -60,3 +60,12 @@ upd
 TO MAKE CHARACTER not stick to the sides of tilemap
 Add component platform effector 2D -> Uncheck Use One Way
 Composite Collider -> check use by effector
+
+isTrigger -> if true no collision with physical objects
+
+! TAGS ! - array to select objects in code
+
+! PREFABS ! - move object from hierarchy to project assets to create a prefab
+- a ready object with all its functions and other stuff
+
+! UI ! - Hierarchy -> UI
